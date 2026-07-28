@@ -19,7 +19,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::path::PathBuf;
 use std::sync::Mutex;
-use tauri::{LogicalPosition, LogicalSize, Manager, WebviewUrl, WebviewWindow};
+use tauri::{Emitter, LogicalPosition, LogicalSize, Manager, WebviewUrl, WebviewWindow};
 
 const TOOLBAR_HEIGHT: f64 = 80.0;
 

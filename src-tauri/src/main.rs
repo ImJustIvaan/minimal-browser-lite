@@ -164,7 +164,8 @@ fn new_tab(app: tauri::AppHandle, window: WebviewWindow, url: Option<String>) ->
             push_history(&nav_app, url.to_string(), url.to_string());
             true
         });
-    let webview = window.add_child(
+    let base_window = app.get_window("main").expect("main window not found");
+    let webview = base_window.add_child(
         builder,
         LogicalPosition::new(0.0, TOOLBAR_HEIGHT),
         LogicalSize::new(1100.0, 720.0 - TOOLBAR_HEIGHT),
